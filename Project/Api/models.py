@@ -2,15 +2,14 @@ from django.db import models
 
 # clss+name 
 
-class Alumno(models.Model):
-    id_Alumno = models.AutoField(primary_key=True)
-    DNI = models.TextField(max_length=10, unique=True)
-    Edad = models.IntegerField()
-    nombre = models.TextField(max_length=35)
-    apellido = models.TextField(max_length=35)
-    email = models.EmailField(unique=True)
-    Calle = models.TextField(max_length=50)
-    Altura= models.IntegerField()
+class Producto(models.Model):
+    id= models.AutoField(primary_key=True)
+    Nombre_producto = models.TextField(max_length=60, unique=True)
+    stock = models.IntegerField()
+    descripcion = models.TextField(max_length=200)
+    precio = models.FloatField()
+    
+
 
     def __str__(self):
-        return self.DNI 
+        return self.id
