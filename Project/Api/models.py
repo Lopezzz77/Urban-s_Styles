@@ -9,7 +9,7 @@ class Producto(models.Model):
     descripcion = models.CharField(max_length=200)
     precio = models.FloatField()
     personaje = models.CharField(max_length=60)
-    franquicia = models.CharField(max_length=60)    
+    saga = models.CharField(max_length=200)    
 
 
 

@@ -12,7 +12,7 @@
   <div class="container header-inner">
     <h1 class="logo"> Admin <span>Panel</span></h1>
     <nav class="nav">
-      <a href="{% url 'inicio' %}" class="btn-admin">← Volver a la tienda</a>
+      <a href="{% url 'inicio' %}" class="btn-admin">Volver a la tienda</a>
       <button id="themeToggle" class="theme-toggle" title="Cambiar tema">🌙</button>
     </nav>
   </div>
@@ -21,44 +21,13 @@
 <main class="container admin-main">
   <section class="form-card">
     <h2 id="formTitle">Cargar nuevo producto</h2>
-    <form id="productForm">
+    <form id="productForm" method="post">
+      <img src="{% static 'src/funko_donatello.jpg' %}" alt="">
+      {{form}}
+       <button type="submit" class="btn-primary" id="submitBtn">Guardar producto</button>
+      {% csrf_token %}
       <input type="hidden" id="productId">
-      <div class="form-row">
-        <label>Nombre
-          <input type="text" id="name" required>
-        </label>
-        <label>Precio 
-          <input type="number" id="price" min="0" step="0.01" required>
-        </label>
-      </div>
-      <div class="form-row">
-        <label>Franquicia
-          <select id="empresa" required>
-            <option value="">-- Seleccionar --</option>
-            <option>Marvel</option>
-            <option>DC</option>
-            <option>Disney</option>
-            <option>Star Wars</option>
-            <option>Anime</option>
-          </select>
-        </label>
-        <label>Película / Personaje
-          <input type="text" id="pelicula" placeholder="Spiderman, Batman, ..." required>
-        </label>
-      </div>
-      <div class="form-row">
-        <label>Stock
-          <input type="number" id="stock" min="0" required>
-        </label>
-        <label>URL de imagen
-          <input type="url" id="image" placeholder="https://..." required>
-        </label>
-      </div>
-      <label>Descripción
-        <textarea id="description" rows="3" required></textarea>
-      </label>
-      <div class="form-actions">
-        <button type="submit" class="btn-primary" id="submitBtn">Guardar producto</button>
+      <div class="form-row">  
         <button type="button" class="btn-secondary" id="cancelBtn" hidden>Cancelar edición</button>
       </div>
     </form>
