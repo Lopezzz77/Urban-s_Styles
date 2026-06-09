@@ -1,0 +1,15 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% for i in Productos %}
+  <div class="product-card">
+    <img src="{{ i.Imagen.url }}" alt="{{ i.Nombre }}">
+    <h1>{{ i.id }}</h1>
+    <h1>{{ i.Nombre_producto }}</h1>
+    <h1>{{ i.descripcion }}</h1>
+    <h1>{{ i.precio }}</h1>
+    <h1>{{ i.stock }}</h1>
+    <h1>{{ i.personaje }}</h1>
+    <h1>{{ i.saga }}</h1>
+  </div>
+{% endfor %}

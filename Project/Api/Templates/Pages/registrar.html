@@ -24,8 +24,9 @@
     <form id="productForm" method="post">
       <img src="{% static 'src/funko_donatello.jpg' %}" alt="">
       {{form}}
+    
        <button type="submit" class="btn-primary" id="submitBtn">Guardar producto</button>
-      {% csrf_token %}
+        <p class="mensaje">{{Mensaje}}<p></p>
       <input type="hidden" id="productId">
       <div class="form-row">  
         <button type="button" class="btn-secondary" id="cancelBtn" hidden>Cancelar edición</button>
